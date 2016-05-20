@@ -15,8 +15,6 @@ else
 ssh-keygen -b 2048 -t rsa -f ~/.ssh/dm-$1_rsa -q -N ""
 openstack keypair create dm-$1-pubkey --public-key ~/.ssh/dm-$1_rsa.pub
 
-
-
  docker-machine create --driver openstack\
   --openstack-ssh-user root\
   --openstack-image-name "Ubuntu 16.04"\
