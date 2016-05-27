@@ -7,13 +7,13 @@
 
   - os_server:
          state: present
-         name: myserver
+         name: "{{ servername|default('myserver')}}"
          image: "CloudVPS Ubuntu 14.04"
          key_name: demo_pubkey
          timeout: 200
          flavor: 111
          network: net-public
          meta:
-           hostname: myserver
-           group: testserver
+           hostname: "{{servername|default('myserver')}}"
+           group: "{{servergroup|default('defaultgroup')}}"
 
