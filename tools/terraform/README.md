@@ -5,6 +5,8 @@ and install terraform on your platform.
 
 ## Prerequisites
 
+This setup has been tested with Terraform v0.8.2
+
 Please add an ssh publickey to your openstack account, or upload with the openstackclient:
 
 Generate key (Without passphrase, so beware):
