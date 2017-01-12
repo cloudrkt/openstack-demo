@@ -73,9 +73,9 @@ resource "openstack_compute_instance_v2" "terraform" {
 
   provisioner "remote-exec" {
     connection {
-      user     = "${var.ssh_user_name}"
-      key_file = "${var.ssh_key_file}"
-      agent    = "false"
+      type        = "ssh"
+      user        = "${var.ssh_user_name}"
+      private_key = "${file("${var.ssh_key_file}")}"
     }
 
     inline = [
